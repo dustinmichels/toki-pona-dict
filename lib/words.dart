@@ -11,6 +11,13 @@ Future<List<DictWord>> loadDict() async {
   return wordObjList;
 }
 
+class Definition {
+  final String pos; // part of speach
+  final String def; // definition
+  final String eg; // exmaple
+  Definition(this.pos, this.def, this.eg);
+}
+
 class DictWord {
   String word;
   List<Definition> definitions;
@@ -33,12 +40,5 @@ class DictWord {
     return "DictWord[$word]";
   }
 
-  String getMainWord() => word.split(' (')[0];
-}
-
-class Definition {
-  final String pos;
-  final String def;
-  final String eg;
-  Definition(this.pos, this.def, this.eg);
+  String getRootWord() => word.split(' (')[0];
 }
