@@ -48,6 +48,9 @@ flutter:
   fonts:
     - family: LinjaPona
       fonts:
+        - asset: assets/fonts/linja-pona-4.0.otf
+    - family: LinjaPona3
+      fonts:
         - asset: assets/fonts/linja-pona3.otf
   #   - family: Trajan Pro
   #     fonts:
