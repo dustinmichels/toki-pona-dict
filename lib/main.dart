@@ -62,7 +62,7 @@ class HomePage extends StatelessWidget {
                           text: "\n${d.pos}. ",
                           style: TextStyle(
                               fontStyle: FontStyle.italic,
-                              color: Colors.blueGrey.withOpacity(0.8))),
+                              color: Colors.blueGrey.withOpacity(0.9))),
                       TextSpan(text: "${d.def}\n")
                     ])
                 .expand((i) => i)
@@ -133,19 +133,30 @@ class WordDetailScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text("${dictWord.word}"),
         ),
-        body: Column(children: [
-          Text.rich(TextSpan(children: [
-            TextSpan(
-              text: dictWord.word,
-              style: TextStyle(fontSize: 30.0),
-            ),
-            TextSpan(
-              text: _rootWord,
-              style: TextStyle(fontFamily: 'LinjaPona', fontSize: 30.0),
-            )
-          ])),
+        body: Column(children: <Widget>[
+          // The word
+          Container(
+              width: 300,
+              alignment: Alignment.center,
+              margin: const EdgeInsets.all(10.0),
+              child: Text(
+                dictWord.word,
+                style: TextStyle(fontSize: 40.0),
+              )),
 
-          // definitions
+          // The glyph
+          // Note: difficult to center because Flutter thinks it's longer than it really is
+          Container(
+              width: 300,
+              margin: const EdgeInsets.all(10.0),
+              child: Container(
+                  margin: EdgeInsets.only(left: 130),
+                  child: Text(
+                    _rootWord,
+                    style: TextStyle(fontFamily: 'LinjaPona', fontSize: 40.0),
+                  ))),
+
+          // definitions// definitions
           Expanded(child: _buildDefinitionsList())
         ]));
   }
