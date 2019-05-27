@@ -150,10 +150,10 @@ class WordDetailScreen extends StatelessWidget {
               width: 300,
               margin: const EdgeInsets.all(10.0),
               child: Container(
-                  margin: EdgeInsets.only(left: 130),
+                  margin: EdgeInsets.only(left: 135),
                   child: Text(
                     _rootWord,
-                    style: TextStyle(fontFamily: 'LinjaPona', fontSize: 40.0),
+                    style: TextStyle(fontFamily: 'LinjaPona', fontSize: 30.0),
                   ))),
 
           // definitions// definitions
